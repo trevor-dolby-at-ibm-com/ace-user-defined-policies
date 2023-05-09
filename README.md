@@ -39,7 +39,7 @@ redeploying, should cause the output to change to
   <UserDefinedPolicyProject>ExampleUserDefinedPolicyProject</UserDefinedPolicyProject>
   <UserDefinedPolicy>ExampleUserDefinedPolicy</UserDefinedPolicy>
   <UserDefinedPolicyProperty>Property1</UserDefinedPolicyProperty>
-  <UserDefinedPolicyPropertyValue>ValueOfOne</UserDefinedPolicyPropertyValue>
+  <UserDefinedPolicyPropertyValue>SecondValueOfOne</UserDefinedPolicyPropertyValue>
 </ResponseMessage>
 ```
 for the next invocation.
@@ -48,6 +48,8 @@ Note that not all policies are read dynamically: JDBC policies, for example, req
 
 Deploying the same policy twice without changing the values will lead to messages such as
 ```
-2023-05-08 16:59:24.218404: BIP9339W: The values defined in the policy(s) 'ExampleUserDefinedPolicy' in policy project 'ExampleUserDefinedPolicyProject' match the values of the existing policy(s). Any deployed resources using the policy(s) will not be affected by the redeploy of the policy project. 
+2023-05-08 16:59:24.218404: BIP9339W: The values defined in the policy(s) 'ExampleUserDefinedPolicy'
+in policy project 'ExampleUserDefinedPolicyProject' match the values of the existing policy(s). 
+Any deployed resources using the policy(s) will not be affected by the redeploy of the policy project. 
 ```
 which are harmless, showing only that the server has noticed that nothing needs to be done.
